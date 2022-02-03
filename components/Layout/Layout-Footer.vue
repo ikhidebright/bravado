@@ -34,3 +34,23 @@
     <v-icon color="white" small>mdi-account-circle</v-icon>
   </v-footer>
 </template>
+
+<script>
+export default {
+  data() {
+    return {}
+  },
+  computed: {
+    getCurrecntTime() {
+      const date = new Date()
+      const hr =
+        date.getHours() - 12 > 10
+          ? `${date.getHours() - 12}`
+          : `0${date.getHours()}`
+      const ampm = date.getHours() >= 12 ? 'PM' : 'AM'
+
+      return `${hr}:${date.getMinutes()} ${ampm}`
+    },
+  },
+}
+</script>

@@ -11,7 +11,7 @@
             v-html="highlightSearchText().name"
           ></span>
           <span
-            class="email ml-auto mt-3"
+            class="email ml-auto mt-3 mr-1"
             v-html="highlightSearchText().email"
           ></span>
         </div>
@@ -20,7 +20,7 @@
           v-html="highlightSearchText().title"
         ></small>
         <p class="address mb-3 pl-5" v-html="highlightSearchText().address"></p>
-        <div class="pl-8 pt-2 cardActions">
+        <div class="pl-8 pt-2 pb-3 cardActions">
           <nuxt-link to="/">SKIP SELECTION</nuxt-link>
           <!-- <nuxt-link to="/">MARK AS SIUTABLE</nuxt-link> -->
         </div>

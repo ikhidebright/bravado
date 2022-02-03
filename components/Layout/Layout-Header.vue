@@ -7,7 +7,7 @@
     <v-btn icon x-small color="white" class="mr-5">
       <v-icon>mdi-checkbox-blank-outline</v-icon>
     </v-btn>
-    <v-btn icon x-small color="white">
+    <v-btn icon x-small color="white" class="mr-1">
       <v-icon>mdi-close</v-icon>
     </v-btn>
   </v-app-bar>
