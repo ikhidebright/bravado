@@ -6,26 +6,15 @@
         alt="google chrome logo"
         class="mr-4"
       />
-      <img
-        src="~/assets/icons/gmail.svg"
-        alt="google chrome logo"
-        class="mr-4"
-      />
-      <img
-        src="~/assets/icons/google.svg"
-        alt="google chrome logo"
-        class="mr-4"
-      />
+      <img src="~/assets/icons/gmail.svg" alt="google mail logo" class="mr-4" />
+      <img src="~/assets/icons/google.svg" alt="google logo" class="mr-4" />
       <img
         src="~/assets/icons/googledrive.svg"
-        alt="google chrome logo"
+        alt="google drive logo"
         class="mr-4"
       />
-      <img
-        src="~/assets/icons/youtube.svg"
-        alt="google chrome logo"
-        class="mr-4"
-      />
+      <img src="~/assets/icons/youtube.svg" alt="youtube logo" class="mr-4" />
+      <!-- <img src="~/assets/icons/menu.svg" alt="menu" class="mr-4" /> -->
     </span>
     <v-spacer />
     <span class="white--text mr-4 caption">{{ getCurrecntTime }}</span>
