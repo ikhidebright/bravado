@@ -1,0 +1,32 @@
+.user {
+  .name {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.87);
+  }
+  .job {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(0, 0, 0, 0.543846);
+  }
+  .address {
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    /* identical to box height, or 143% */
+
+    color: rgba(0, 0, 0, 0.543846);
+  }
+
+  .userImage {
+    background-color: #bbbbbb;
+  }
+}
