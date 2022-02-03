@@ -5,9 +5,21 @@
         <v-img :src="user.avatar" class="userImage" />
       </v-col>
       <v-col cols="9">
-        <p class="name mb-n1 pl-5 pt-1">{{ user.name }}</p>
-        <small class="job mb-n1 pl-5">{{ user.title }}</small>
-        <p class="address mb-3 pl-5">{{ user.address }}</p>
+        <div class="d-flex">
+          <span
+            class="name mb-n1 pl-5 pt-1"
+            v-html="highlightSearchText().name"
+          ></span>
+          <span
+            class="email ml-auto mt-3"
+            v-html="highlightSearchText().email"
+          ></span>
+        </div>
+        <small
+          class="job mb-n1 pl-5"
+          v-html="highlightSearchText().title"
+        ></small>
+        <p class="address mb-3 pl-5" v-html="highlightSearchText().address"></p>
         <div class="pl-8 pt-2 cardActions">
           <nuxt-link to="/">SKIP SELECTION</nuxt-link>
           <!-- <nuxt-link to="/">MARK AS SIUTABLE</nuxt-link> -->
@@ -23,6 +35,38 @@ export default {
     user: {
       type: Object,
       required: true,
+    },
+  },
+  methods: {
+    changeHighlitedTextColor(text) {
+      const coloredText = `<span style="background-color: yellow; color: black">${this.$route.params.keyword.toLowerCase()}</span>`
+      const regExp = new RegExp(this.$route.params.keyword, 'gi')
+      return text.replace(regExp, coloredText)
+    },
+    highlightSearchText() {
+      if (
+        this.$route.name === 'search-keyword' &&
+        this.$route.fullPath.includes('search')
+      ) {
+        const nameFormatted = this.changeHighlitedTextColor(this.user.name)
+        const addressFormatted = this.changeHighlitedTextColor(
+          this.user.address
+        )
+        const titleFormatted = this.changeHighlitedTextColor(this.user.title)
+        const emailFormatted = this.changeHighlitedTextColor(this.user.email)
+        return {
+          name: nameFormatted,
+          address: addressFormatted,
+          title: titleFormatted,
+          email: emailFormatted,
+        }
+      }
+      return {
+        name: this.user.name,
+        address: this.user.address,
+        title: this.user.title,
+        email: this.user.email,
+      }
     },
   },
 }

@@ -10,13 +10,12 @@ export const mutations = {
 
 export const getters = {
   searchUsers: (state) => (userQuery) => {
-    // const searchedUsers = []
-    return state.filter((item) => {
+    return state.users.filter((item) => {
       return (
-        item.name.toLowerCase().includes(userQuery) ||
-        item.email.toLowerCase().includes(userQuery) ||
-        item.title.toLowerCase().includes(userQuery) ||
-        item.address.toLowerCase().includes(userQuery)
+        item.name.toLowerCase().includes(userQuery.toLowerCase()) ||
+        item.email.toLowerCase().includes(userQuery.toLowerCase()) ||
+        item.title.toLowerCase().includes(userQuery.toLowerCase()) ||
+        item.address.toLowerCase().includes(userQuery.toLowerCase())
       )
     })
     // return searchedUsers

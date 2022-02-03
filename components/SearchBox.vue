@@ -18,7 +18,10 @@ export default {
   methods: {
     addSearchQuery() {
       setTimeout(() => {
-        this.$router.replace({ path: `/search/${this.searchInput}` })
+        this.$router.push({
+          name: 'search-keyword',
+          params: { keyword: this.searchInput },
+        })
       }, 2500)
     },
   },
